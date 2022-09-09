@@ -1,24 +1,47 @@
 body.container {
     width: 100vw;
     height: 100vh;
-    background-position: center;
-    background-image: linear-gradient(#134d71, #f7e4bf)
+    background-position: center;    
+    justify-content: center;
+    display: flex;
+    background-image: linear-gradient(#134d71 33px, #78a7c6, #f7e4bf)
  }
   
  header.page-header {
-    height: 120px;
+    height: 60px;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     color: #ffffff;
  }
+
+div {
+    /* justify-content: center; */
+    border-radius: 15px;
+    background: #ffffff;
+    padding: 20px;
+    width: 400px;
+    height: auto;
+}
   
- section.selection-form {
-    height: 80px;
-    text-align: horizontal;
+div.selection-form {
+    contain: content;
+    height: auto;
+    justify-content: space-evenly;
+    text-align: center;
     font-style: italic;
     font-family: 'Quicksand', sans-serif;
     color: #000000;
-  
+ }
+
+ button.submit {
+    text-align: center;
+    color: #ffffff;
+    background: #134d71;
+ }
+
+ div.svg {
+    width: auto;
+    height: auto;
  }
   
   
