@@ -33,7 +33,7 @@ mantras = [
     'I am the sky, the rest is weather.'
 ];
 
-// //Query Selectors for functionaality
+// //Query Selectors for functionality
 var affirmationRadioButton = document.getElementById('affirmation')
 var mantraRadioButton = document.getElementById('mantra')
 var submitButton = document.querySelector('.submit')
@@ -42,9 +42,9 @@ var meditationIcon = document.getElementById('yoga-icon')
 
 // //Event Listeners
 // -event listener for random(function) "affirmation" radio button
-affirmationRadioButton.addEventListener('click', displayMessage)
+affirmationRadioButton.addEventListener('click', affirmationsMessages)
 // -event listener for random(function) "mantra" radio button
-mantraRadioButton.addEventListener('click', displayMessage)
+mantraRadioButton.addEventListener('click', mantrasMessages)
 // -event listener to invoke radio buttons and receive message button
 submitButton.addEventListener('click', displayRandom)
 submitButton.addEventListener('click',hideYogaIcon)
@@ -66,16 +66,13 @@ function getRandomIndex(array) {
 
 // //1. Create random affirmations.
 function affirmationsMessages() {
-    var affirmation = affirmations[getRandomIndex(affirmations)]
+    displayMessage.innerText = getRandomIndex(affirmations)
 }
 //2. Create random mantras function.
-function displayRandom() {
+function mantrasMessages() {
     displayMessage.innerText = getRandomIndex(mantras)
 }
-// console.log(displayRandom())
-    
-// }
-// //3. Create function that will display for random string of array.
+//3. Create function that will invoke display for random string of array based on array var.
 // function displayMessage() {
 //     console.log(displayRandomMantras())
 // }
