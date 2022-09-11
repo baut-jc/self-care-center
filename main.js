@@ -71,7 +71,6 @@ function mantrasMessages() {
 function receiveMessageDisplay() {
     meditationIcon.classList.add('hidden')
     if (affirmationRadioButton) {
-        console.log(affirmationRadioButton)
         affirmationsMessages()
     } else if (mantraRadioButton) {
         mantrasMessages()
