@@ -1,5 +1,5 @@
 //Arrays
-var affirmations = [
+affirmations = [
     'I forgive myself and set myself free.',
     'I believe I can be all that I want to be.',
     'I am in the process of becoming the best version of myself.',
@@ -15,7 +15,7 @@ var affirmations = [
     'I manifest perfect health by making smart choices.'
 ];
 
-var mantras = [
+mantras = [
     'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
     'Don\’t let yesterday take up too much of today.',
     'Every day is a second chance.',
@@ -33,39 +33,65 @@ var mantras = [
     'I am the sky, the rest is weather.'
 ];
 
+// //Query Selectors for functionaality
+var affirmationRadioButton = document.getElementById('affirmation')
+var mantraRadioButton = document.getElementById('mantra')
+var submitButton = document.querySelector('.submit')
+var displayMessage = document.querySelector('.random-message')
+var meditationIcon = document.getElementById('yoga-icon')
 
-//Query Selectors for functionaality
-var affirmationRadioButton = document.getElementbyId('affirmation')
-var mantraRadioButtion = document.getElementbyId('mantra')
-var displayMessage = document.querySelector('.submit')
-
-//Event Listeners
+// //Event Listeners
 // -event listener for random(function) "affirmation" radio button
 affirmationRadioButton.addEventListener('click', displayMessage)
 // -event listener for random(function) "mantra" radio button
+mantraRadioButton.addEventListener('click', displayMessage)
 // -event listener to invoke radio buttons and receive message button
-
+submitButton.addEventListener('click', displayRandom)
+submitButton.addEventListener('click',hideYogaIcon)
+// -event listener when submit button is clicked
+//** radio button functionality */
+// for(radio in radios) {
+//     radios[radio].onclick = function() {
+//         alert(this.value);
+//     }
+// }
 
 //Functions
 //* to get random string from array.
 function getRandomIndex(array) {
-    return Math.floor(Math.random() * array.length);
+    var arrayIndex = Math.floor(Math.random()* array.length)
+    var display = array[arrayIndex]
+    return display
 }
 
-//1. Create random affirmations.
-function displayRandomAffirmation() {
+// //1. Create random affirmations.
+function affirmationsMessages() {
     var affirmation = affirmations[getRandomIndex(affirmations)]
 }
 //2. Create random mantras function.
-function displayRandomMantras() {
-    var mantra = mantras[getRandomIndex()]
-    for(var i = 0; i < mantras.length, i++) {
-        console.log(displayRandomMantras())
-    }
+function displayRandom() {
+    displayMessage.innerText = getRandomIndex(mantras)
 }
-//3. Create function that will display for random string of array.
-function displayMessage() {
-    console.log(displayRandomMantras())
-}
+// console.log(displayRandom())
+    
+// }
+// //3. Create function that will display for random string of array.
+// function displayMessage() {
+//     console.log(displayRandomMantras())
+// }
 //4. Create function that will invoke random affirmation/mantra when submit button is invoked through invoking other functions affirmation/mantra.
 //5. Hide icon when submit button is clicked.
+function hideYogaIcon() {
+    meditationIcon.classList.toggle('off')
+}
+//1. save favorite message
+//2. push message to array
+//3. create save button
+//4. create view saved button
+//5. create delete function
+// function saveFave() {
+//     covers.push(userCover.value)
+//     titles.push(userTitle.value)
+//     descriptors.push(userDescriptor1.value)
+//     descriptors.push(userDescriptor2.value)
+//   }
