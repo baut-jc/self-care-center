@@ -49,7 +49,10 @@ div.selection-form {
  #yoga-icon {
     width: 9%;
  }
-  
+
+ .hidden {
+    display: none
+ }
   
   
   

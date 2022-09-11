@@ -39,16 +39,21 @@ var mantraRadioButton = document.getElementById('mantra')
 var submitButton = document.querySelector('.submit')
 var displayMessage = document.querySelector('.random-message')
 var meditationIcon = document.getElementById('yoga-icon')
+var manifestButton = document.querySelector('.manifest-button')
+var savedButton = document.querySelector('.saved-button')
+var radioOptions = document.querySelectorAll('.option')
 
 // //Event Listeners
 // -event listener for random(function) "affirmation" radio button
-affirmationRadioButton.addEventListener('click', affirmationsMessages)
+// affirmationRadioButton.addEventListener('click', affirmationsMessages)
 // -event listener for random(function) "mantra" radio button
-mantraRadioButton.addEventListener('click', mantrasMessages)
+// mantraRadioButton.addEventListener('click', mantrasMessages)
 // -event listener to invoke radio buttons and receive message button
-submitButton.addEventListener('click', displayRandom)
-submitButton.addEventListener('click',hideYogaIcon)
+// submitButton.addEventListener('click', hideYoganIcon)
+submitButton.addEventListener('click', hideYogaIcon)
 // -event listener when submit button is clicked
+//**create an event listener that will invoke affirmation&mantra button when clicking receiving message  */
+//**remove the yoga-icon when messages are being posted */
 //** radio button functionality */
 // for(radio in radios) {
 //     radios[radio].onclick = function() {
@@ -76,10 +81,24 @@ function mantrasMessages() {
 // function displayMessage() {
 //     console.log(displayRandomMantras())
 // }
+// function submitButton() {
+//     for (affirmationRadioButton of radio)
+// }
+// for(affirmationsMessages in affirmationRadioButton) {
+//     //     radios[radio].onclick = function() {
+//     //         alert(this.value);
+//     //     }
+//     // }
+
 //4. Create function that will invoke random affirmation/mantra when submit button is invoked through invoking other functions affirmation/mantra.
 //5. Hide icon when submit button is clicked.
 function hideYogaIcon() {
-    meditationIcon.classList.toggle('off')
+    meditationIcon.classList.add('hidden')
+    if (affirmationRadioButton.checked) {
+        affirmationsMessages()
+    } else if (mantraRadioButton.checked) {
+        mantrasMessages()
+    }
 }
 //1. save favorite message
 //2. push message to array
