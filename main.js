@@ -90,7 +90,16 @@ function viewSavedFaves() {
     faveManifest.classList.remove('hidden')
     messageDisplay.classList.add('hidden')
     formDisplay.classList.add('hidden')
-    question.innerText('✨Manifested Saves✨')
-    saveFaves().innerHTML
+    question.innerText = '✨Manifested Faves✨'
+    // for
+    // saveFaves().innerHTML = `
+    //     <div class = "svg">
+    //         <li class="random-message">'${saveFaves()}'</li>
+    //         <button class ="manifest-button">Manifest!</button>
+    //         <button class ="saved-button">Manifested Saves!</button>
+    //     </div> `
+    // faveMessages.forEach(m => {
+    //     return <div>{m}</div>
+    // })
 }
 //3. create delete function
