@@ -38,13 +38,17 @@ faveMessages = [
 ]
 
 // //Query Selectors for functionality
+var question = document.querySelector('.question')
+var formDisplay = document.querySelector('.selection-form')
 var affirmationRadioButton = document.getElementById('affirmation')
 var mantraRadioButton = document.getElementById('mantra')
 var submitButton = document.querySelector('.submit')
 var displayMessage = document.querySelector('.random-message')
+var messageDisplay = document.querySelector('.svg')
 var meditationIcon = document.getElementById('yoga-icon')
 var manifestButton = document.querySelector('.manifest-button')
 var savedButton = document.querySelector('.saved-button')
+var faveManifest = document.querySelector('.manifested-saves')
 
 // //Event Listeners
 submitButton.addEventListener('click', receiveMessageDisplay)
@@ -61,7 +65,7 @@ function getRandomIndex(array) {
 
 //1. Create random affirmations.
 function affirmationsMessages() {
-    displayMessage.innerText += getRandomIndex(affirmations)
+    displayMessage.innerText = getRandomIndex(affirmations)
 }
 //2. Create random mantras function.
 function mantrasMessages() {
@@ -83,14 +87,10 @@ function saveFaves() {
  }
 //2. Style and InnerText/HTML to show page.
 function viewSavedFaves() {
-    
-    
-
+    faveManifest.classList.remove('hidden')
+    messageDisplay.classList.add('hidden')
+    formDisplay.classList.add('hidden')
+    question.innerText('✨Manifested Saves✨')
+    saveFaves().innerHTML
 }
 //3. create delete function
-// function saveFave() {
-//     covers.push(userCover.value)
-//     titles.push(userTitle.value)
-//     descriptors.push(userDescriptor1.value)
-//     descriptors.push(userDescriptor2.value)
-//   }
